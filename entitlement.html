@@ -1,0 +1,18 @@
+test2
+
+<div id="lightning"></div>
+<script src="https://stirling--dev.sandbox.my.site.com/stirling/s/lightning/lightning.out.js"></script>
+<script>
+     $Lightning.use("c:OnDemandEntitlement", function() {
+        $Lightning.createComponent("c:onDemandRemainingEntitlements", 
+{ },
+              "lightning()",
+              function(cmp) {
+                console.log("LWC component was created");
+                // do some stuff
+              }
+          );
+        },
+       '<Community Site URL>'
+      );
+</script>
