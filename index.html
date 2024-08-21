@@ -1,12 +1,9 @@
-test7
-
-
 <html>
 <script src="https://stirling--dev.sandbox.my.site.com/stirling/lightning/lightning.out.js"></script>
-  <div>
-    <h1></h1>
+  <div id="spinner">
+    Loading...
   </div>
-<div data-lightning-out="true">Loading...</div>
+<div data-lightning-out="true"></div>
 <script>
     const appName='c:OnDemandEntitlement';
     const componentname='c:OnDemandRemainingEntitlements';
@@ -22,7 +19,7 @@ test7
             targetElement ,
               function(cmp) {
                 console.log("LWC component was created");
-                // do some stuff
+                document.getElementById("spinner").innerHTML = "";
               }
           );
         },
