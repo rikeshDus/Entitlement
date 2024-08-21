@@ -1,18 +1,32 @@
-test5
+test6
 
-<div id="lightning"></div>
-<script src="https://stirling--dev.sandbox.my.site.com/lightning/lightning.out.js"></script>
+
+<html>
+<script src="https://stirling--dev.sandbox.my.site.com/stirling/lightning/lightning.out.js"></script>
+  <div>
+    <h1></h1>
+  </div>
+<div data-lightning-out="true">Loading...</div>
 <script>
-     $Lightning.use("c:OnDemandEntitlement", function() {
-        $Lightning.createComponent("c:onDemandRemainingEntitlements", 
-{ },
-              "lightning()",
+    const appName='c:OnDemandEntitlement';
+    const componentname='c:OnDemandRemainingEntitlements';
+    const lightningEndPoint='https://stirling--dev.sandbox.my.site.com/stirling';
+    const targetElement=document.querySelector("[data-lightning-out]");
+     $Lightning.use(
+        appName, 
+        function() {
+          console.log('inside first function');
+        $Lightning.createComponent(
+            componentname, 
+            {},
+            targetElement ,
               function(cmp) {
                 console.log("LWC component was created");
                 // do some stuff
               }
           );
         },
-       'https://stirling--dev.sandbox.my.site.com/stirling'
+        lightningEndPoint
       );
 </script>
+</html>
